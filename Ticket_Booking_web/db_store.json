@@ -1,0 +1,204 @@
+{
+    "categories": [
+        {
+            "categoryName": "Pain Relief",
+            "description": "Medicines for reducing physical pain and inflammation.",
+            "_id": "b3dacbd9a2e849baaba2dbe2cccf953d",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        },
+        {
+            "categoryName": "Diabetes",
+            "description": "Medicines to manage blood sugar levels.",
+            "_id": "d110c423cbd842f0a10fef3a6b57da6c",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        },
+        {
+            "categoryName": "Vitamin Supplements",
+            "description": "Nutritional and vitamin supplements.",
+            "_id": "5a00ec1e2b59415d87bc62eb91227c5f",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        },
+        {
+            "categoryName": "Skin Care",
+            "description": "Creams and lotions for skin health.",
+            "_id": "d0f420772d4b4c19901dbd7c3c7ac322",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        },
+        {
+            "categoryName": "Allergy",
+            "description": "Medicines for anti-allergic treatments.",
+            "_id": "39cd54538cb94be1941be7a1ca064898",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        },
+        {
+            "categoryName": "Baby Care",
+            "description": "Products specially formulated for infant care.",
+            "_id": "29fa8ce0684f4f168a2ed6b96449c1f5",
+            "createdAt": "2026-07-09T11:12:43.543570"
+        }
+    ],
+    "medicines": [
+        {
+            "medicineName": "Paracetamol 650",
+            "brand": "Cipla",
+            "category": "Pain Relief",
+            "price": 45.0,
+            "stock": 120,
+            "description": "Standard pain relief and fever reducing medicine.",
+            "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2027-12-31",
+            "manufacturer": "Cipla Ltd",
+            "_id": "f1fdac153c35417387b13531857226bf",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Dolo 650",
+            "brand": "Micro Labs",
+            "category": "Pain Relief",
+            "price": 38.0,
+            "stock": 90,
+            "description": "Widely used for fever control and pain relief.",
+            "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2027-10-30",
+            "manufacturer": "Micro Labs",
+            "_id": "b2c5e206248c49249d0c81d65bbe2411",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Metformin 500",
+            "brand": "Sun Pharma",
+            "category": "Diabetes",
+            "price": 80.0,
+            "stock": 65,
+            "description": "Oral diabetes medicine that helps control blood sugar levels.",
+            "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2028-01-15",
+            "manufacturer": "Sun Pharmaceutical Industries",
+            "_id": "79ffba98d1b144be9f98c66abc4d7f31",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Vitamin C Tablets",
+            "brand": "Himalaya",
+            "category": "Vitamin Supplements",
+            "price": 150.0,
+            "stock": 50,
+            "description": "Daily immunity booster and antioxidant supplement.",
+            "image": "https://images.unsplash.com/photo-1616679911721-eff6eec18fcd?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2027-06-30",
+            "manufacturer": "Himalaya Wellness",
+            "_id": "0221ee81951c4d2ea74fe7d1d07ce8e6",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Cetirizine",
+            "brand": "Dr. Reddy's",
+            "category": "Allergy",
+            "price": 65.0,
+            "stock": 150,
+            "description": "Antihistamine that reduces the natural chemical histamine in the body.",
+            "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2027-08-15",
+            "manufacturer": "Dr. Reddy's Laboratories",
+            "_id": "0f6447167eaf481ab0f984a5b526d2e0",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Moisturizing Cream",
+            "brand": "Nivea",
+            "category": "Skin Care",
+            "price": 220.0,
+            "stock": 40,
+            "description": "Intense moisture care for soft and supple skin.",
+            "image": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2028-05-31",
+            "manufacturer": "Nivea India",
+            "_id": "0fe1ec587f14474db1dbefcae655bcb3",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        },
+        {
+            "medicineName": "Baby Lotion",
+            "brand": "Johnson's",
+            "category": "Baby Care",
+            "price": 180.0,
+            "stock": 70,
+            "description": "Gentle baby lotion designed to protect delicate baby skin.",
+            "image": "https://images.unsplash.com/photo-1519689680058-324335c77ebe?w=500&auto=format&fit=crop&q=60",
+            "expiryDate": "2028-03-31",
+            "manufacturer": "Johnson & Johnson",
+            "_id": "577d07d5c3ce4f3d8232eddb0f5bc7b4",
+            "createdAt": "2026-07-09T11:13:26.399317"
+        }
+    ],
+    "users": [
+        {
+            "name": "Admin",
+            "email": "admin@pharmacy.com",
+            "phone": "9999999999",
+            "password": "pbkdf2_sha256$1000000$cMgJc3YSjItQu7MY4N5vzb$0lX/f6LCUJZcr1tSu0igTMRRbrTq+aCy9Nwslpto1+Q=",
+            "address": "Pharmacy HQ, Main Street",
+            "role": "admin",
+            "_id": "f44d6f55bbb347909cb667ec5a5a3643",
+            "createdAt": "2026-07-09T11:13:28.836190"
+        },
+        {
+            "name": "Rahul Sharma",
+            "email": "rahul@gmail.com",
+            "phone": "9876543210",
+            "password": "pbkdf2_sha256$1000000$QGQSXkF7kqEIhRuPHM6Hns$TLqCwSYQ2bXRvHNeo/5p+DPy1DajA+MWYREvdCYiAEI=",
+            "address": "123, Park Avenue, Delhi",
+            "role": "customer",
+            "_id": "e126b24eb645451f97f426944fc55aaf",
+            "createdAt": "2026-07-09T11:13:28.836190"
+        },
+        {
+            "name": "Priya Verma",
+            "email": "priya@gmail.com",
+            "phone": "9876543211",
+            "password": "pbkdf2_sha256$1000000$lrlgyMWSXd46lfxgYTdidW$H+EQMiLD3KjMNyBDsZ3flAlsfO6gMVg5C4iGKMAHb0s=",
+            "address": "456, Rose Garden, Mumbai",
+            "role": "customer",
+            "_id": "cce23980fe3440ceba75e9004985ecf5",
+            "createdAt": "2026-07-09T11:13:28.836190"
+        }
+    ],
+    "orders": [
+        {
+            "userId": "e126b24eb645451f97f426944fc55aaf",
+            "items": [
+                {
+                    "medicineId": "f1fdac153c35417387b13531857226bf",
+                    "quantity": 2
+                }
+            ],
+            "totalAmount": 90.0,
+            "paymentMethod": "Cash on Delivery",
+            "status": "Pending",
+            "_id": "fbe17a2265f1419c9c01c3b28756dc4e",
+            "createdAt": "2026-07-09T11:13:28.838706"
+        },
+        {
+            "userId": "cce23980fe3440ceba75e9004985ecf5",
+            "items": [
+                {
+                    "medicineId": "0221ee81951c4d2ea74fe7d1d07ce8e6",
+                    "quantity": 1
+                }
+            ],
+            "totalAmount": 150.0,
+            "paymentMethod": "Cash on Delivery",
+            "status": "Delivered",
+            "_id": "8357e365df5b4c86a84b512bc559e542",
+            "createdAt": "2026-07-09T11:13:28.841744"
+        }
+    ],
+    "cart": [
+        {
+            "userId": "e126b24eb645451f97f426944fc55aaf",
+            "items": [],
+            "total": 0.0,
+            "_id": "30badacade13489e98eb72a225289146",
+            "createdAt": "2026-07-09T11:13:30.243971"
+        }
+    ]
+}
