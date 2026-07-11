@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaVibe - Premium Pharmacy Management Website</title>
+    <meta name="description" content="Manage your medical products, browse catalogs, place online orders, and manage inventory with PharmaVibe.">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="app-header">
+        <div class="header-container">
+            <a href="/" class="app-logo" id="nav-logo">
+                <i class="fa-solid fa-prescription-bottle-medical logo-icon"></i>
+                <span class="logo-text">Pharma<span>Vibe</span></span>
+            </a>
+            
+            <nav class="app-nav" id="app-navigation">
+                <a href="/" class="nav-link active" id="nav-home"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/medicines" class="nav-link" id="nav-medicines"><i class="fa-solid fa-capsules"></i> Medicines</a>
+                
+                <!-- Customer Only Links -->
+                <a href="/cart" class="nav-link customer-only" id="nav-cart" style="display: none;">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span class="cart-badge" id="cart-item-count" style="display: none;">0</span>
+                </a>
+                <a href="/orders" class="nav-link customer-only" id="nav-orders" style="display: none;"><i class="fa-solid fa-receipt"></i> Orders</a>
+                
+                <!-- Admin Only Links -->
+                <a href="/admin/dashboard" class="nav-link admin-only" id="nav-admin-dashboard" style="display: none;"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                <a href="/admin/medicines" class="nav-link admin-only" id="nav-admin-medicines" style="display: none;"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a>
+                <a href="/admin/categories" class="nav-link admin-only" id="nav-admin-categories" style="display: none;"><i class="fa-solid fa-tags"></i> Categories</a>
+                <a href="/admin/users" class="nav-link admin-only" id="nav-admin-users" style="display: none;"><i class="fa-solid fa-users"></i> Users</a>
+                <a href="/admin/orders" class="nav-link admin-only" id="nav-admin-orders" style="display: none;"><i class="fa-solid fa-truck-ramp-box"></i> Order Admin</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+
+                <div class="auth-buttons" id="auth-section">
+                    <button class="btn btn-outline" id="btn-login-open"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+                    <button class="btn btn-primary" id="btn-register-open">Sign Up</button>
+                </div>
+
+                <div class="user-menu" id="user-profile-menu" style="display: none;">
+                    <button class="user-profile-btn" id="btn-profile-toggle">
+                        <div class="avatar" id="user-avatar-initials">US</div>
+                        <span class="username-display" id="user-fullname">User</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profile-dropdown">
+                        <a href="/profile" class="dropdown-item" id="drop-profile"><i class="fa-solid fa-user-gear"></i> My Profile</a>
+                        <a href="/orders" class="dropdown-item customer-only" id="drop-orders"><i class="fa-solid fa-file-invoice"></i> My Orders</a>
+                        <hr class="dropdown-divider">
+                        <button class="dropdown-item text-danger" id="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                    </div>
+                </div>
+                
+                <button class="hamburger-menu" id="hamburger" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Rendering Root -->
+    <main id="app-root">
+        <!-- Rendered Dynamically by app.js -->
+        <div class="loader-container" id="app-initial-loader">
+            <div class="spinner"></div>
+            <p>Initializing PharmaVibe...</p>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-section brand-info">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-prescription-bottle-medical"></i> PharmaVibe
+                </div>
+                <p>Providing high-quality medical products, health supplements, and smart inventory tools for pharmaceutical management.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links-group">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/" class="footer-nav-link">Home Catalogs</a></li>
+                    <li><a href="/medicines" class="footer-nav-link">Search Medicines</a></li>
+                    <li><a href="/cart" class="footer-nav-link">Shopping Cart</a></li>
+                    <li><a href="/profile" class="footer-nav-link">Profile Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section links-group">
+                <h3>Our Categories</h3>
+                <ul id="footer-categories-list">
+                    <li><a href="/medicines?category=Pain Relief" class="footer-nav-link">Pain Relief</a></li>
+                    <li><a href="/medicines?category=Diabetes" class="footer-nav-link">Diabetes</a></li>
+                    <li><a href="/medicines?category=Vitamin Supplements" class="footer-nav-link">Vitamins</a></li>
+                    <li><a href="/medicines?category=Skin Care" class="footer-nav-link">Skin Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contact & Support</h3>
+                <p><i class="fa-solid fa-phone"></i> +1 (800) 555-0199</p>
+                <p><i class="fa-solid fa-envelope"></i> support@pharmavibe.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> 100 Health Avenue, Suite 500, New York</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PharmaVibe. All rights reserved. Developed for Python-FSD major project.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modals Section -->
+    <!-- Authentication Modal (Login / Signup) -->
+    <div class="modal-overlay" id="auth-modal" style="display: none;">
+        <div class="modal-card modal-medium">
+            <div class="modal-header">
+                <h2 id="auth-modal-title">Log In to PharmaVibe</h2>
+                <button class="modal-close" id="auth-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form id="form-login">
+                    <div class="form-group">
+                        <label for="login-email">Email Address <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input type="email" id="login-email" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password <span class="required">*</span></label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+                    <p class="auth-switch-prompt">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+                </form>
+
+                <!-- Registration Form -->
+                <form id="form-register" style="display: none;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="reg-name">Full Name <span class="required">*</span></label>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-user input-icon"></i>
+                                <input type="text" id="reg-name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email Address <span class="required">*</span></label>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" id="reg-email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-phone">Phone Number</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-phone input-icon"></i>
+                                <input type="tel" id="reg-phone" class="form-control" placeholder="9876543210">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Password <span class="required">*</span></label>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-address">Delivery Address</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-location-dot input-icon"></i>
+                            <textarea id="reg-address" class="form-control" rows="2" placeholder="House/Flat No., Street, City, ZIP"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-role">Account Type</label>
+                        <select id="reg-role" class="form-control">
+                            <option value="customer">Customer (Buy Medicines)</option>
+                            <option value="admin">Administrator (Manage Inventory)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                    <p class="auth-switch-prompt">Already have an account? <a href="#" id="switch-to-login">Log In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medicine Add/Edit Modal (Admin Only) -->
+    <div class="modal-overlay" id="medicine-modal" style="display: none;">
+        <div class="modal-card modal-large">
+            <div class="modal-header">
+                <h2 id="medicine-modal-title">Add New Medicine</h2>
+                <button class="modal-close" id="medicine-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-medicine">
+                    <input type="hidden" id="med-id">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="med-name">Medicine Name <span class="required">*</span></label>
+                            <input type="text" id="med-name" class="form-control" required placeholder="e.g. Paracetamol 650">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-brand">Brand <span class="required">*</span></label>
+                            <input type="text" id="med-brand" class="form-control" required placeholder="e.g. Cipla">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-category">Category <span class="required">*</span></label>
+                            <select id="med-category" class="form-control" required>
+                                <!-- Categories dynamically loaded -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="med-manufacturer">Manufacturer</label>
+                            <input type="text" id="med-manufacturer" class="form-control" placeholder="e.g. Cipla Laboratories">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-price">Price ($) <span class="required">*</span></label>
+                            <input type="number" id="med-price" class="form-control" min="0" step="0.01" required placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-stock">Initial Stock Quantity <span class="required">*</span></label>
+                            <input type="number" id="med-stock" class="form-control" min="0" required placeholder="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-expiry">Expiry Date</label>
+                            <input type="date" id="med-expiry" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="med-image">Image URL</label>
+                            <input type="url" id="med-image" class="form-control" placeholder="https://example.com/image.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="med-description">Description</label>
+                        <textarea id="med-description" class="form-control" rows="3" placeholder="Provide description, dosage info, indications..."></textarea>
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button type="button" class="btn btn-outline" id="btn-medicine-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="btn-medicine-submit">Save Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Add/Edit Modal (Admin Only) -->
+    <div class="modal-overlay" id="category-modal" style="display: none;">
+        <div class="modal-card modal-small">
+            <div class="modal-header">
+                <h2 id="category-modal-title">Add Category</h2>
+                <button class="modal-close" id="category-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-category">
+                    <input type="hidden" id="cat-id">
+                    <div class="form-group">
+                        <label for="cat-name">Category Name <span class="required">*</span></label>
+                        <input type="text" id="cat-name" class="form-control" required placeholder="e.g. Antibiotics">
+                    </div>
+                    <div class="form-group">
+                        <label for="cat-description">Description</label>
+                        <textarea id="cat-description" class="form-control" rows="3" placeholder="Describe the category classification..."></textarea>
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button type="button" class="btn btn-outline" id="btn-category-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="btn-category-submit">Save Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail View Modal (Customer Product Detail) -->
+    <div class="modal-overlay" id="detail-modal" style="display: none;">
+        <div class="modal-card modal-medium">
+            <div class="modal-header">
+                <h2 id="detail-modal-title">Medicine Details</h2>
+                <button class="modal-close" id="detail-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="detail-modal-content">
+                <!-- Dynamically filled by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Application Logic -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
